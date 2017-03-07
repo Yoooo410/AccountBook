@@ -146,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
         final TextView setYearAndMonth = (TextView) findViewById(R.id.setYearAndMonth);
         setYearAndMonth.setText(String.valueOf(year+"/"+(month+1)));
 
+        System.out.println("");
+
 
         /* make the plus button */
         plusMonth.setOnClickListener(new View.OnClickListener() {
