@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AccountBook</string>
+    <string name="action_settings">Settings</string>
+    <string name="special_char"><![CDATA[<]]></string>
+</resources>
