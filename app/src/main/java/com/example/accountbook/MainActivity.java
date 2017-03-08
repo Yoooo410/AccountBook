@@ -146,8 +146,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView setYearAndMonth = (TextView) findViewById(R.id.setYearAndMonth);
         setYearAndMonth.setText(String.valueOf(year+"/"+(month+1)));
 
-        System.out.println("");
-
 
         /* make the plus button */
         plusMonth.setOnClickListener(new View.OnClickListener() {
@@ -183,6 +181,18 @@ public class MainActivity extends AppCompatActivity {
                 for(int i=dayOfWeek+lastDate;i<=42;i++){
                     button_table[i].setText("");
                 }
+
+                /** make total view of expense of month **/
+                DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
+                final SQLiteDatabase db = dbHelper.getReadableDatabase();
+                final Cursor cursor1 = db.rawQuery(
+                        "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE " + DatabaseHelper.COLUMN_YEAR  + " = " + year + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+                double total = 0;
+                if (cursor1.moveToNext()){
+                    total = cursor1.getInt(0);
+                }
+                TextView totalExpenseOfMonth = (TextView) findViewById(R.id.totalExpenseOfMonth);
+                totalExpenseOfMonth.setText(String.valueOf(total));
             }
         });
 
@@ -220,19 +230,20 @@ public class MainActivity extends AppCompatActivity {
                 for(int i=dayOfWeek+lastDate;i<=42;i++){
                     button_table[i].setText("");
                 }
+
+                /** make total view of expense of month **/
+                DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
+                final SQLiteDatabase db = dbHelper.getReadableDatabase();
+                final Cursor cursor1 = db.rawQuery(
+                        "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE " + DatabaseHelper.COLUMN_YEAR  + " = " + year + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+                double total = 0;
+                if (cursor1.moveToNext()){
+                    total = cursor1.getInt(0);
+                }
+                TextView totalExpenseOfMonth = (TextView) findViewById(R.id.totalExpenseOfMonth);
+                totalExpenseOfMonth.setText(String.valueOf(total));
             }
         });
-
-        /** make total view of expense of month **/
-        DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
-        final SQLiteDatabase db = dbHelper.getReadableDatabase();
-        final Cursor cursor1 = db.rawQuery("SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "+ DatabaseHelper.COLUMN_MONTH + " = 2", null);
-        double total = 0;
-        if (cursor1.moveToNext()){
-            total = cursor1.getInt(0);
-        }
-        TextView totalExpenseOfMonth = (TextView) findViewById(R.id.totalExpenseOfMonth);
-        totalExpenseOfMonth.setText(String.valueOf(total));
     }
 
 

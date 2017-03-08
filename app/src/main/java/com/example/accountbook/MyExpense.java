@@ -91,27 +91,6 @@ public class MyExpense extends AppCompatActivity {
         String tableName=String.valueOf(year) + " / " + String.valueOf(month+1) + " / " + String.valueOf(day);
         TextView dateOfExpense = (TextView) findViewById(R.id.dateOfExpense);
         dateOfExpense.setText(tableName);
-        TextView textView = (TextView) findViewById(R.id.textViewTotalExpenseOfDay);
-        int sum = 0;
-
-        Intent intent = getIntent();
-        String year1 = intent.getStringExtra("year");
-        String month1 = intent.getStringExtra("month");
-        String day1 = intent.getStringExtra("day");
-        String price1 = intent.getStringExtra("price");
-
-        Log.e("test",String.valueOf(year) +year1+String.valueOf(month+1) + month1 + String.valueOf(day) + day1);
-
-        if (String.valueOf(year) == year1 && String.valueOf(month+1) == month1 && String.valueOf(day) == day1){
-
-            sum += Integer.parseInt(price1);
-            textView.setText(sum);
-        }
-
-//        int totalExpenseOfDay1 = 0;
-//        TextView totalExpenseOfDay = (TextView) findViewById(R.id.textViewTotalExpenseOfDay);
-//        totalExpenseOfDay1 = totalExpenseOfDay1 + Integer.parseInt(DatabaseHelper.COLUMN_PRICE);
-//        totalExpenseOfDay.setText(totalExpenseOfDay1);
 
         myExpenseListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -147,6 +126,19 @@ public class MyExpense extends AppCompatActivity {
                 return true;
             }
         });
+
+        /** make total view of expense of month **/
+        final Cursor cursor1 = db.rawQuery(
+                "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
+                        + DatabaseHelper.COLUMN_YEAR  + " = " + year
+                        + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
+                        + " AND " + DatabaseHelper.COLUMN_DAY + " = " + day, null);
+        double total = 0;
+        if (cursor1.moveToNext()){
+            total = cursor1.getInt(0);
+        }
+        TextView totalExpenseOfDay = (TextView) findViewById(R.id.totalExpenseOfDay);
+        totalExpenseOfDay.setText(String.valueOf(total));
 
     }
 }
