@@ -107,13 +107,16 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i=dayOfWeek;i<=dayOfWeek+lastDate-1;i++){
 
-
-
             button_table[i].setText(String.valueOf(day));
             button_table[i].setTextSize(15);
-            final int finalI = i;
+            day=day+1;
+        }
 
-            /* set onClickListener to each buttons */
+
+        /* set onClickListener to each buttons */
+        for (int i = 1; i <= 42; i++) {
+
+            final int finalI = i;
             button_table[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -122,19 +125,27 @@ public class MainActivity extends AppCompatActivity {
 
                     if (v == button_table[finalI]){
                         Button button = (Button) v;
-                        int day =Integer.parseInt(button.getText().toString());
-                        Intent intentDate = new Intent(MainActivity.this, MyExpense.class);
-                        intentDate.putExtra("year", year);
-                        intentDate.putExtra("month", month);
-                        intentDate.putExtra("day", day);
+                        if(button.getText().toString() != ""){
+                            System.out.println(button.getText().toString());
+                            int day =Integer.parseInt(button.getText().toString());
 
-                        Toast.makeText(getApplicationContext(), "y" + year + ", m" +month+", d" +day,Toast.LENGTH_LONG).show();
-                        startActivity(intentDate);
+                            Intent intentDate = new Intent(MainActivity.this, MyExpense.class);
+                            intentDate.putExtra("year", year);
+                            intentDate.putExtra("month", month);
+                            /*year・monthは書き換えさせれても全てが同じなので問題ないが、dayは書き換えられてしまうと月の末日のみがintentされる*/
+                            intentDate.putExtra("day", day);
+                            Toast.makeText(getApplicationContext(), "y" + year + ", m" +month+", d" +day,Toast.LENGTH_LONG).show();
+                            startActivity(intentDate);
+                        }else {
+                            Toast.makeText(getApplicationContext(),"Please push the number of calender!",Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });
-            day=day+1;
+
         }
+
+        /** ifで分岐 ボタンに数字が無い場合　getText**/
 
 
         /** make the view of the year and month
