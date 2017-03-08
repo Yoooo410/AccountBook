@@ -107,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i=dayOfWeek;i<=dayOfWeek+lastDate-1;i++){
 
+
+
             button_table[i].setText(String.valueOf(day));
             button_table[i].setTextSize(15);
             final int finalI = i;
@@ -115,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
             button_table[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    System.out.println(finalI);
 
                     if (v == button_table[finalI]){
                         Button button = (Button) v;
