@@ -84,8 +84,9 @@ public class AddExpense extends AppCompatActivity {
                 else {
                     Toast.makeText(getApplicationContext(), "Succeed in inserting your expense to the account book!" ,Toast.LENGTH_SHORT).show();
                 }
-                Intent intent = new Intent(AddExpense.this, MainActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(AddExpense.this, MainActivity.class);
+//                startActivity(intent);
+                finish();
             }
         });
 

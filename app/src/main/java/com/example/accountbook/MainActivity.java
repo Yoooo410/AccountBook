@@ -246,6 +246,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        /** make total view of expense of month **/
+        DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
+        final SQLiteDatabase db = dbHelper.getReadableDatabase();
+        final Cursor cursor1 = db.rawQuery(
+                "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE " + DatabaseHelper.COLUMN_YEAR  + " = " + year + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+        double total = 0;
+        if (cursor1.moveToNext()){
+            total = cursor1.getInt(0);
+        }
+        TextView totalExpenseOfMonth = (TextView) findViewById(R.id.totalExpenseOfMonth);
+        totalExpenseOfMonth.setText(String.valueOf(total));
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
