@@ -1,8 +1,7 @@
 package com.example.accountbook;
 
-/**
- * Created by 賀人 on 2017/03/09.
- */
+import android.support.v7.app.AppCompatActivity;
 
-public class ExpenseOfMonth {
+public class ExpenseOfMonth extends AppCompatActivity{
+
 }
