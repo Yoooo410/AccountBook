@@ -51,10 +51,11 @@ public class Categorize extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int checkedId = radioGroup.getCheckedRadioButtonId();
-                RadioButton radioButton = (RadioButton)v.findViewById(checkedId);
+                RadioButton radioButton = (RadioButton)findViewById(checkedId);
                 Intent intentCategory = new Intent(Categorize.this,AddExpense.class);
                 intentCategory.putExtra("checkedCategory", radioButton.getText().toString());
-                startActivity(intentCategory);
+                setResult(RESULT_OK,intentCategory);
+                finish();
             }
         });
 
