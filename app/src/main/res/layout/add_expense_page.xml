@@ -72,7 +72,7 @@
             android:hint="food"
             android:textSize="18sp"
             android:ems="10"
-            android:id="@+id/editTextCategory"
+            android:id="@+id/textViewCategory"
             android:textAlignment="center"
             android:layout_alignBaseline="@+id/category"
             android:layout_alignBottom="@+id/category"

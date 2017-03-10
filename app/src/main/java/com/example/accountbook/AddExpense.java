@@ -12,11 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class AddExpense extends AppCompatActivity {
-    
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,11 +27,23 @@ public class AddExpense extends AppCompatActivity {
         final EditText editTextYear = (EditText) findViewById(R.id.editTextYear);
         final EditText editTextMonth = (EditText) findViewById(R.id.editTextMonth);
         final EditText editTextDay = (EditText) findViewById(R.id.editTextDay);
-        final EditText editTextCategory = (EditText) findViewById(R.id.editTextCategory);
+        final TextView textViewCategory = (TextView) findViewById(R.id.textViewCategory);
         final EditText editTextDetail = (EditText) findViewById(R.id.editTextDetail);
         final EditText editTextPrice = (EditText) findViewById(R.id.editTextPrice);
         final EditText editTextPayment = (EditText) findViewById(R.id.editTextPayment);
+        ImageButton ibCategorize = (ImageButton) findViewById(R.id.categorizeButton);
 
+        ibCategorize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCategorize = new Intent(AddExpense.this,Categorize.class);
+                startActivity(intentCategorize);
+            }
+        });
+        Intent getCategorize = getIntent();
+        String category = getCategorize.getStringExtra("CheckedCategory");
+        System.out.println(category);
+        textViewCategory.setText(category);
 
         Button buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +55,7 @@ public class AddExpense extends AppCompatActivity {
                 final String year = editTextYear.getText().toString();
                 final String month = editTextMonth.getText().toString();
                 final String day = editTextDay.getText().toString();
-                final String category = editTextCategory.getText().toString();
+                final String category = textViewCategory.getText().toString();
                 final String detail = editTextDetail.getText().toString();
                 final String price = editTextPrice.getText().toString();
                 final String payment = editTextPayment.getText().toString();
@@ -82,8 +95,6 @@ public class AddExpense extends AppCompatActivity {
                 else {
                     Toast.makeText(getApplicationContext(), "Succeed in inserting your expense to the account book!" ,Toast.LENGTH_SHORT).show();
                 }
-//                Intent intent = new Intent(AddExpense.this, MainActivity.class);
-//                startActivity(intent);
                 finish();
             }
         });
