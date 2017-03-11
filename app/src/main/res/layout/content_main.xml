@@ -488,6 +488,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:text="Month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Month" />
+
         <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
@@ -499,19 +505,19 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="210dp"
+            android:layout_width="194dp"
             android:layout_height="match_parent">
 
             <TextView
                 android:text="Total"
-                android:layout_width="match_parent"
+                android:layout_width="188dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2"
+                android:id="@+id/Month"
                 android:textSize="20sp" />
 
             <TextView
                 android:text="Expense"
-                android:layout_width="match_parent"
+                android:layout_width="182dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
                 android:textSize="20sp" />
@@ -522,5 +528,6 @@
                 android:id="@+id/totalExpenseOfMonth"
                 android:textSize="20sp" />
         </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

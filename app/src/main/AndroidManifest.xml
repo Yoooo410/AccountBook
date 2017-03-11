@@ -22,6 +22,7 @@
         <activity android:name=".AddExpense"></activity>
         <activity android:name=".MyExpense"></activity>
         <activity android:name=".Categorize"></activity>
+        <activity android:name=".ExpenseOfMonth"></activity>
         <!--<provider-->
             <!--android:authorities="com.example.accountbook."-->
             <!--android:name="com.example.accountbook.ContentProvider"></provider>-->

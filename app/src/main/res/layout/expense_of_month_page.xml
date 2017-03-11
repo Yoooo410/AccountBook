@@ -27,7 +27,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView18"
+            android:id="@+id/totalExpenseOfFood"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -51,7 +51,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView19"
+            android:id="@+id/totalExpenseOfAmusement"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -75,7 +75,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView20"
+            android:id="@+id/totalExpenseOfCloth"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -87,7 +87,7 @@
             android:id="@+id/textView8"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignBottom="@+id/textView20"
+            android:layout_alignBottom="@+id/totalExpenseOfCloth"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -99,7 +99,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView21"
+            android:id="@+id/totalExpenseOfUtilities"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -123,7 +123,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView22"
+            android:id="@+id/totalExpenseOfHOuseRent"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -157,7 +157,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView23"
+            android:id="@+id/totalExpenseOfCellPhone"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -181,7 +181,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView24"
+            android:id="@+id/totalExpenseOfTransportationFee"
             android:layout_alignBaseline="@+id/textView13"
             android:layout_alignBottom="@+id/textView13"
             android:layout_alignParentRight="true"
@@ -196,7 +196,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView25"
+            android:id="@+id/totalExpenseOfOther"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />

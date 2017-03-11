@@ -109,10 +109,6 @@ public class MyExpense extends AppCompatActivity {
 
                         db.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_ID + " = ?",new String[]{deleteId});
                         adapter.swapCursor(cursor);
-
-//                        Intent intent = new Intent(MyExpense.this, MainActivity.class);
-//                        startActivity(intent);
-
                         finish();
                     }
                 });

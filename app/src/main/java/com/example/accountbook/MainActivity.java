@@ -1,6 +1,5 @@
 package com.example.accountbook;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,10 +8,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -145,9 +142,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        /** ifで分岐 ボタンに数字が無い場合　getText**/
-
-
         /** make the view of the year and month
                      and the buttons of Adding a month and decreasing a month **/
         Button plusMonth = (Button) this.findViewById(R.id.plusMonth);
@@ -257,6 +251,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 TextView totalExpenseOfMonth = (TextView) findViewById(R.id.totalExpenseOfMonth);
                 totalExpenseOfMonth.setText(String.valueOf(total));
+            }
+        });
+
+        Button buttonMonth = (Button) findViewById(R.id.Month);
+        buttonMonth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentMonth = new Intent(MainActivity.this,ExpenseOfMonth.class);
+                startActivity(intentMonth);
             }
         });
     }
