@@ -21,58 +21,66 @@
         <RadioButton
             android:text="@string/categoryFood"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rbFood" />
+            android:id="@+id/rbFood"
+            android:layout_height="45dp"
+            android:textSize="22sp"
+            android:textAlignment="textStart"
+            android:gravity="center_vertical|center|start" />
 
         <RadioButton
             android:text="@string/categoryAmusement"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/rbAmusement"
-            android:layout_weight="1" />
+            android:layout_height="45dp"
+            android:textSize="22sp" />
 
         <RadioButton
             android:text="@string/categoryCloth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/rbCloth"
-            android:layout_weight="1" />
+            android:layout_height="45dp"
+            android:textSize="22sp" />
 
         <RadioButton
             android:text="@string/categoryUtilities"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/rbUtilities"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:textSize="22sp" />
 
         <RadioButton
             android:text="@string/categoryHouseRent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/rbHouseRent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:textSize="22sp" />
 
         <RadioButton
             android:text="@string/categoryCellPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/rbCellPhone"
             android:layout_weight="1"
-            android:duplicateParentState="false" />
+            android:duplicateParentState="false"
+            android:layout_height="45dp"
+            android:textSize="22sp" />
 
         <RadioButton
             android:text="@string/categoryTransportationFee"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/rbTransportationFee"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:textSize="22sp" />
 
         <RadioButton
             android:text="@string/categoryOther"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/rbOther"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:textSize="22sp" />
     </RadioGroup>
 
     <RelativeLayout

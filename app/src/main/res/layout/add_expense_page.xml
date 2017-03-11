@@ -14,7 +14,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true">
 
             <EditText
@@ -66,19 +65,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="food"
-            android:textSize="18sp"
-            android:ems="10"
-            android:id="@+id/textViewCategory"
-            android:textAlignment="center"
-            android:layout_alignBaseline="@+id/category"
-            android:layout_alignBottom="@+id/category"
-            android:layout_toRightOf="@+id/category"
-            android:layout_toEndOf="@+id/category" />
-
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,6 +73,18 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="food"
+            android:textSize="18sp"
+            android:ems="10"
+            android:id="@+id/textViewCategory"
+            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/category"
+            android:layout_toEndOf="@+id/category" />
 
     </RelativeLayout>
 
@@ -112,13 +110,13 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editTextDetail"
+            android:textAlignment="center"
+            android:hint="egg"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="13dp"
-            android:layout_marginEnd="13dp"
-            android:textAlignment="center"
-            android:hint="egg" />
+            android:layout_marginEnd="13dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -137,6 +135,15 @@
             android:layout_marginStart="49dp"
             android:textSize="25sp" />
 
+        <TextView
+            android:text="$"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,50 +151,72 @@
             android:hint="100.00"
             android:ems="10"
             android:id="@+id/editTextPrice"
-            android:layout_alignBaseline="@+id/PRICE"
-            android:layout_alignBottom="@+id/PRICE"
+            android:textAlignment="center"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignBaseline="@+id/textView10"
+            android:layout_alignBottom="@+id/textView10"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="16dp"
-            android:layout_marginEnd="16dp"
-            android:textAlignment="center" />
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="120dp">
 
         <TextView
             android:text="PAYMENT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/payment"
-            android:layout_marginLeft="26dp"
-            android:layout_marginStart="26dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
             android:textSize="25sp"
-            android:layout_centerVertical="true"
+            android:layout_alignTop="@+id/radioGroup2"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp" />
 
-        <EditText
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="cash"
-            android:ems="10"
-            android:id="@+id/editTextPayment"
-            android:layout_alignBaseline="@+id/payment"
-            android:layout_alignBottom="@+id/payment"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="13dp"
-            android:layout_marginEnd="13dp"
-            android:textAlignment="center" />
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/payment"
+            android:layout_toEndOf="@+id/payment"
+            android:layout_marginLeft="75dp"
+            android:layout_marginStart="75dp"
+            android:id="@+id/rgPayment">
+
+            <RadioButton
+                android:text="Cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbCash"
+                android:layout_weight="1"
+                android:textSize="17sp" />
+
+            <RadioButton
+                android:text="Credit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbCredit"
+                android:layout_weight="1"
+                android:textSize="17sp" />
+
+            <RadioButton
+                android:text="Debit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbDebit"
+                android:layout_weight="1"
+                android:textSize="17sp" />
+        </RadioGroup>
+
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="136dp">
+        android:layout_height="105dp">
 
         <Button
             android:text="ADD"

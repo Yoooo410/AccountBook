@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +47,6 @@ public class AddExpense extends AppCompatActivity {
         final TextView textViewCategory = (TextView) findViewById(R.id.textViewCategory);
         final EditText editTextDetail = (EditText) findViewById(R.id.editTextDetail);
         final EditText editTextPrice = (EditText) findViewById(R.id.editTextPrice);
-        final EditText editTextPayment = (EditText) findViewById(R.id.editTextPayment);
         ImageButton ibCategorize = (ImageButton) findViewById(R.id.categorizeButton);
 
         ibCategorize.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +74,11 @@ public class AddExpense extends AppCompatActivity {
                 final String category = textViewCategory.getText().toString();
                 final String detail = editTextDetail.getText().toString();
                 final String price = editTextPrice.getText().toString();
-                final String payment = editTextPayment.getText().toString();
+
+                RadioGroup rgPayment = (RadioGroup) findViewById(R.id.rgPayment);
+                int checkedId = rgPayment.getCheckedRadioButtonId();
+                RadioButton rbPayment = (RadioButton) findViewById(checkedId);
+                final String payment = rbPayment.getText().toString();
 
 
                 ContentValues values = new ContentValues();
