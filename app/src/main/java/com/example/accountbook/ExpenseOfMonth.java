@@ -33,7 +33,7 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "Food", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'Food'", null);
         double totalFood = 0;
         if (cursor1.moveToNext()){
             totalFood = cursor1.getInt(0);
@@ -47,7 +47,7 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "Amusement", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'Amusement'", null);
         double totalAmusement = 0;
         if (cursor2.moveToNext()){
             totalAmusement = cursor2.getInt(0);
@@ -61,7 +61,7 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "Cloth", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'Cloth'", null);
         double totalCloth = 0;
         if (cursor3.moveToNext()){
             totalCloth = cursor3.getInt(0);
@@ -75,7 +75,7 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "Utilities", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'Utilities'", null);
         double totalUtilities = 0;
         if (cursor4.moveToNext()){
             totalUtilities = cursor4.getInt(0);
@@ -89,7 +89,7 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "House Rent", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'House Rent'", null);
         double totalHouseRent = 0;
         if (cursor5.moveToNext()){
             totalHouseRent = cursor5.getInt(0);
@@ -103,7 +103,7 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "Cell Phone", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'Cell Phone'", null);
         double totalCellPhone = 0;
         if (cursor6.moveToNext()){
             totalCellPhone = cursor6.getInt(0);
@@ -117,7 +117,7 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "Transportation Fee", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'Transportation Fee'", null);
         double totalTransportationFee = 0;
         if (cursor7.moveToNext()){
             totalTransportationFee = cursor7.getInt(0);
@@ -131,12 +131,25 @@ public class ExpenseOfMonth extends AppCompatActivity{
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
                         + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1)
-                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "Other", null);
+                        + " AND " + DatabaseHelper.COLUMN_CATEGORY + " = " + "'Other'", null);
         double totalOther = 0;
         if (cursor8.moveToNext()){
             totalOther = cursor8.getInt(0);
         }
         TextView totalExpenseOfOther = (TextView) findViewById(R.id.totalExpenseOfOther);
         totalExpenseOfOther.setText(String.valueOf(totalOther));
+
+
+        /* For total */
+        final Cursor cursor9 = db.rawQuery(
+                "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
+                        + DatabaseHelper.COLUMN_YEAR  + " = " + year
+                        + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+        double total = 0;
+        if (cursor9.moveToNext()){
+            total = cursor9.getInt(0);
+        }
+        TextView totalExpense = (TextView) findViewById(R.id.totalExpense);
+        totalExpense.setText(String.valueOf(total));
     }
 }

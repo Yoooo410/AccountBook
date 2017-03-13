@@ -139,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-
         }
 
         /** make the view of the year and month

@@ -22,21 +22,6 @@ import android.widget.Toast;
 public class AddExpense extends AppCompatActivity {
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode){
-
-            case 1:
-                if(resultCode == RESULT_OK){
-                    String checkedCategory = data.getStringExtra("checkedCategory");
-                    final TextView textViewCategory = (TextView) findViewById(R.id.textViewCategory);
-                    textViewCategory.setText(checkedCategory);
-                }
-
-
-        }
-    }
-
-    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_expense_page);
@@ -118,9 +103,18 @@ public class AddExpense extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
 
-
-
+            case 1:
+                if(resultCode == RESULT_OK){
+                    String checkedCategory = data.getStringExtra("checkedCategory");
+                    final TextView textViewCategory = (TextView) findViewById(R.id.textViewCategory);
+                    textViewCategory.setText(checkedCategory);
+                }
+        }
     }
 }
