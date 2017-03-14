@@ -19,8 +19,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:textSize="24sp"
-            android:textAlignment="textEnd" />
+            android:textSize="20sp"
+            android:textAlignment="textEnd"
+            android:gravity="bottom" />
 
         <TextView
             android:text="Category"
@@ -29,7 +30,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_width="150dp"
-            android:textSize="24sp" />
+            android:textSize="20sp"
+            android:gravity="bottom" />
 
     </RelativeLayout>
 

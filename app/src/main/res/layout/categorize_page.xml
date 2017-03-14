@@ -9,9 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="73dp"
         android:id="@+id/textView"
-        android:text="Categorize"
+        android:text="Category"
         android:textSize="30sp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:gravity="bottom" />
 
     <RadioGroup
         android:layout_width="match_parent"

@@ -137,6 +137,8 @@ public class MyExpense extends AppCompatActivity {
         }
         TextView totalExpenseOfDay = (TextView) findViewById(R.id.totalExpenseOfDay);
         totalExpenseOfDay.setText(String.valueOf(total));
-
+        System.out.println("");
+        MyListAdapter adapter1 = new MyListAdapter(this,R.layout.view_pager,cols2);
+        myExpenseListView.setAdapter(adapter1);
     }
 }
