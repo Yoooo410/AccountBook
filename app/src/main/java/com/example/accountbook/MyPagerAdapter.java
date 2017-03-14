@@ -29,8 +29,8 @@ public class MyPagerAdapter extends PagerAdapter {
         LinearLayout layout = null;
         if(position == 0){
             layout = (LinearLayout)inflater.inflate(R.layout.list_item, null);
-            TextView text = (TextView)layout.findViewById(R.id.text);
-            text.setText(str);
+//            TextView text = (TextView)layout.findViewById(R.id.text);
+//            text.setText(str);
         }else{
             layout = (LinearLayout)inflater.inflate(R.layout.swip_pager, null);
         }

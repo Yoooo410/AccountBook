@@ -9,7 +9,7 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:layout_weight="0.05"
-        android:layout_height="70dp" />
+        android:layout_weight="0.14"
+        android:layout_height="85dp" />
 
 </LinearLayout>
