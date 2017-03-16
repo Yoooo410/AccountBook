@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:clipToPadding="false">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -14,7 +15,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="52dp">
+        android:layout_height="52dp"
+        android:elevation="5dp">
 
         <Button
             android:text="@string/special_char"
@@ -41,10 +43,12 @@
             android:background="#E7F3AA"/>
     </LinearLayout>
 
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:elevation="10dp">
 
         <Button
             android:text="Sun"

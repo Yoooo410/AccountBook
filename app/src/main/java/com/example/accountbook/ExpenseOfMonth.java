@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -24,12 +25,15 @@ public class ExpenseOfMonth extends AppCompatActivity{
         String year = intentMonth.getStringExtra("year");
         String month = intentMonth.getStringExtra("month");
 
+        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase db = helper.getReadableDatabase();
 
         /** make each category's total of monthly expense **/
 
         /* For Food */
-        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db = helper.getReadableDatabase();
+        ImageView imageFood = (ImageView) findViewById(R.id.imageFood);
+        imageFood.setImageResource(R.drawable.imagefood);
+
         final Cursor cursor1 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
@@ -45,6 +49,9 @@ public class ExpenseOfMonth extends AppCompatActivity{
 
 
         /* For Amusement */
+        ImageView imageAmusement = (ImageView) findViewById(R.id.imageAmusement);
+        imageAmusement.setImageResource(R.drawable.imageamusement);
+
         final Cursor cursor2 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
@@ -60,6 +67,9 @@ public class ExpenseOfMonth extends AppCompatActivity{
 
 
         /* For Cloth */
+        ImageView imageCloth = (ImageView) findViewById(R.id.imageCloth);
+        imageCloth.setImageResource(R.drawable.imagecloth);
+
         final Cursor cursor3 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
@@ -75,6 +85,9 @@ public class ExpenseOfMonth extends AppCompatActivity{
 
 
         /* For Utilities */
+        ImageView imageUtilities = (ImageView) findViewById(R.id.imageUtilities);
+        imageUtilities.setImageResource(R.drawable.imageutilities);
+
         final Cursor cursor4 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
@@ -90,6 +103,9 @@ public class ExpenseOfMonth extends AppCompatActivity{
 
 
         /* For House Rent */
+        ImageView imageHouseRent = (ImageView) findViewById(R.id.imageHouseRent);
+        imageHouseRent.setImageResource(R.drawable.imagehouserent);
+
         final Cursor cursor5 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
@@ -105,6 +121,9 @@ public class ExpenseOfMonth extends AppCompatActivity{
 
 
         /* For Cell Phone */
+        ImageView imageCellPhone = (ImageView) findViewById(R.id.imageCellPhone);
+        imageCellPhone.setImageResource(R.drawable.imagecellphone);
+
         final Cursor cursor6 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
@@ -120,6 +139,9 @@ public class ExpenseOfMonth extends AppCompatActivity{
 
 
         /* For Transportation Fee */
+        ImageView imageTransportationFee = (ImageView) findViewById(R.id.imageTransportationFee);
+        imageTransportationFee.setImageResource(R.drawable.imagetransportation);
+
         final Cursor cursor7 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
@@ -135,6 +157,9 @@ public class ExpenseOfMonth extends AppCompatActivity{
 
 
         /* For Other */
+        ImageView imageOther = (ImageView) findViewById(R.id.imageOther);
+        imageOther.setImageResource(R.drawable.imageother);
+
         final Cursor cursor8 = db.rawQuery(
                 "SELECT TOTAL (" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
                         + DatabaseHelper.COLUMN_YEAR  + " = " + year
