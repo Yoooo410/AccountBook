@@ -92,6 +92,8 @@ public class MyExpense extends AppCompatActivity {
         TextView dateOfExpense = (TextView) findViewById(R.id.dateOfExpense);
         dateOfExpense.setText(tableName);
 
+
+        /** set the dialog of delete button **/
         myExpenseListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position, long id) {

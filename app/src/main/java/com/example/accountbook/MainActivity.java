@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent intentDate = new Intent(MainActivity.this, MyExpense.class);
                             intentDate.putExtra("year", year);
                             intentDate.putExtra("month", month);
+
                             /*year・monthは書き換えさせれても全てが同じなので問題ないが、dayは書き換えられてしまうと月の末日のみがintentされる*/
                             intentDate.putExtra("day", day);
                             Toast.makeText(getApplicationContext(), "y" + year + ", m" +month+", d" +day,Toast.LENGTH_LONG).show();
@@ -155,38 +156,38 @@ public class MainActivity extends AppCompatActivity {
         setYearAndMonth.setText(String.valueOf(year+"/"+(month+1)));
 
 
-        /* make the plus button */
+        /* make the plus button which change to the calender of next month */
         plusMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(month==11){
-                    year=year+1;
-                    month=0;
+                if(month == 11){
+                    year = year + 1;
+                    month = 0;
                 }
                 else{
-                    month=month+1;
+                    month = month + 1;
                 }
                 setMonthAndYear.setText(String.valueOf(year+"/"+(month+1)));
                 setYearAndMonth.setText(String.valueOf(year+"/"+(month+1)));
 
                 calendar.set(year,month,1);
-                day=calendar.get(Calendar.DAY_OF_MONTH);
+                day = calendar.get(Calendar.DAY_OF_MONTH);
                 dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
                 calendar.add(Calendar.MONTH, 1);
                 calendar.add(Calendar.DATE, -1);
                 int lastDate = calendar.get(Calendar.DATE);
                 calendar.set(year,month,1);
 
-                for(int i=1;i<dayOfWeek;i++)
+                for(int i = 1;i < dayOfWeek; i++)
                 {
                     button_table[i].setText("");
                 }
-                for(int i=dayOfWeek;i<=dayOfWeek+lastDate-1;i++){
+                for(int i = dayOfWeek; i <= dayOfWeek + lastDate - 1; i++){
                     button_table[i].setText(String.valueOf(day));
                     button_table[i].setTextSize(15);
-                    day=day+1;
+                    day = day + 1;
                 }
-                for(int i=dayOfWeek+lastDate;i<=42;i++){
+                for(int i = dayOfWeek + lastDate; i <= 42; i++){
                     button_table[i].setText("");
                 }
 
@@ -194,26 +195,45 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
                 final SQLiteDatabase db = dbHelper.getReadableDatabase();
                 final Cursor cursor1 = db.rawQuery(
-                        "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE " + DatabaseHelper.COLUMN_YEAR  + " = " + year + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+                        "SELECT TOTAL("
+                                + DatabaseHelper.COLUMN_PRICE + ") " +
+                        "FROM AccountBook WHERE "
+                                + DatabaseHelper.COLUMN_YEAR  + " = " + year +
+                        " AND "
+                                + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+
                 double total = 0;
                 if (cursor1.moveToNext()){
                     total = cursor1.getInt(0);
                 }
                 TextView totalExpenseOfMonth = (TextView) findViewById(R.id.totalExpenseOfMonth);
                 totalExpenseOfMonth.setText(String.valueOf(total));
+
+                Button buttonMonth = (Button) findViewById(R.id.Month);
+                buttonMonth.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intentMonth = new Intent(MainActivity.this,ExpenseOfMonth.class);
+                        intentMonth.putExtra("year", String.valueOf(year));
+                        intentMonth.putExtra("month", String.valueOf(month + 1));
+//                        intentMonth.putExtra("total", String.valueOf(cursor1.getInt(0)));
+
+                        startActivity(intentMonth);
+                    }
+                });
             }
         });
 
-        /* make the minus button */
+        /* make the minus button which change to the calender of past month */
         minusMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(month==0){
-                    year=year-1;
-                    month=11;
+                if(month == 0){
+                    year = year - 1;
+                    month = 11;
                 }
                 else{
-                    month=month-1;
+                    month = month - 1;
                 }
                 setMonthAndYear.setText(String.valueOf(year+"/"+(month+1)));
                 setYearAndMonth.setText(String.valueOf(year+"/"+(month+1)));
@@ -226,16 +246,16 @@ public class MainActivity extends AppCompatActivity {
                 int lastDate = calendar.get(Calendar.DATE);
                 calendar.set(year,month,1);
 
-                for(int i=1;i<dayOfWeek;i++)
+                for(int i = 1;i < dayOfWeek; i++)
                 {
                     button_table[i].setText("");
                 }
-                for(int i=dayOfWeek;i<=dayOfWeek+lastDate-1;i++){
+                for(int i = dayOfWeek; i <= dayOfWeek + lastDate - 1; i++){
                     button_table[i].setText(String.valueOf(day));
                     button_table[i].setTextSize(15);
                     day=day+1;
                 }
-                for(int i=dayOfWeek+lastDate;i<=42;i++){
+                for(int i = dayOfWeek + lastDate; i <= 42; i++){
                     button_table[i].setText("");
                 }
 
@@ -243,22 +263,32 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
                 final SQLiteDatabase db = dbHelper.getReadableDatabase();
                 final Cursor cursor1 = db.rawQuery(
-                        "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE " + DatabaseHelper.COLUMN_YEAR  + " = " + year + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+                        "SELECT TOTAL("
+                                + DatabaseHelper.COLUMN_PRICE + ") " +
+                        "FROM AccountBook WHERE "
+                                + DatabaseHelper.COLUMN_YEAR  + " = " + year +
+                        " AND "
+                                + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+
                 double total = 0;
                 if (cursor1.moveToNext()){
                     total = cursor1.getInt(0);
                 }
                 TextView totalExpenseOfMonth = (TextView) findViewById(R.id.totalExpenseOfMonth);
                 totalExpenseOfMonth.setText(String.valueOf(total));
-            }
-        });
 
-        Button buttonMonth = (Button) findViewById(R.id.Month);
-        buttonMonth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentMonth = new Intent(MainActivity.this,ExpenseOfMonth.class);
-                startActivity(intentMonth);
+                Button buttonMonth = (Button) findViewById(R.id.Month);
+                buttonMonth.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intentMonth = new Intent(MainActivity.this,ExpenseOfMonth.class);
+                        intentMonth.putExtra("year", String.valueOf(year));
+                        intentMonth.putExtra("month", String.valueOf(month + 1));
+//                        intentMonth.putExtra("total", String.valueOf(cursor1.getInt(0)));
+
+                        startActivity(intentMonth);
+                    }
+                });
             }
         });
     }
