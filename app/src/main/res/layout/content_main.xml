@@ -5,6 +5,7 @@
     android:weightSum="1"
     android:clipToPadding="false">
 
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:elevation="5dp">
+        android:elevation="25dp">
 
         <Button
             android:text="@string/special_char"
@@ -24,7 +25,9 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:id="@+id/minusMonth"
-            android:background="#E7F3AA" />
+            android:background="#E7F3AA"
+            android:elevation="25dp"
+            android:stateListAnimator="@drawable/button"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,9 +43,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/plusMonth"
             android:textSize="18sp"
-            android:background="#E7F3AA"/>
+            android:background="#E7F3AA"
+            android:elevation="25dp"
+            android:stateListAnimator="@drawable/button"/>
     </LinearLayout>
-
 
     <LinearLayout
         android:orientation="horizontal"
@@ -57,7 +61,9 @@
             android:id="@+id/button51"
             android:layout_weight="1"
             android:textSize="12sp"
-            android:background="#E7F3AA"/>
+            android:background="#E7F3AA"
+            android:elevation="25dp"
+            android:stateListAnimator="@drawable/button"/>
 
         <Button
             android:text="Mon"
@@ -113,6 +119,7 @@
             android:layout_weight="1"
             android:textSize="12sp"
             android:background="#E7F3AA"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -487,7 +494,8 @@
             android:background="#E7F3AA"/>
     </LinearLayout>
 
-    <LinearLayout
+
+<LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -516,7 +524,7 @@
                 android:text="Total"
                 android:layout_width="188dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/Month"
+                android:id="@+id/totalMonth"
                 android:textSize="20sp" />
 
             <TextView
