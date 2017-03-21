@@ -32,7 +32,7 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
     @Override
     public void onBindViewHolder(MyCategoryAdapter.ViewHolder holder, int position) {
         holder.categoryTextView.setText(category.get(position).getCategoryName());
-        Picasso.with(context).load(category.get(position).getCategoryIcon());
+        Picasso.with(context).load(category.get(position).getCategoryIcon()).resize(240,240).into(holder.categoryImageView);
     }
 
     @Override

@@ -60,7 +60,7 @@ public class Categorize extends AppCompatActivity {
 
     private ArrayList<Category> prepareData() {
         ArrayList<Category> category1 = new ArrayList<>();
-        for (int i = 0; i < categoryText.length; i++) {
+        for (int i = 0; i < categoryImage.length; i++) {
             Category category2 = new Category();
             category2.setCategoryName(categoryText[i]);
             category2.setCategoryIcon(categoryImage[i]);
