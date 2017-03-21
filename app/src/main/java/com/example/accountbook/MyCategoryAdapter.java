@@ -1,55 +1,54 @@
 package com.example.accountbook;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.List;
+import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
 
 public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.ViewHolder> {
 
-    private int[] categoryText;
-    private int[] categoryImage;
+    private ArrayList<Category> category;
+    private Context context;
 
-    public  static class ViewHolder extends RecyclerView.ViewHolder{
-
-        public RelativeLayout categoryImage;
-
-        public ViewHolder(RelativeLayout v){
-            super(v);
-            categoryImage = v;
-        }
-    }
-
-//    public TextView categoryTextView;
-//    public ImageView categoryImageView;
-
-    public MyCategoryAdapter(int[] categoryText, int[] categoryImage) {
-        categoryText = categoryText;
-        categoryImage = categoryImage;
+    public MyCategoryAdapter(Context context, ArrayList<Category> category){
+        this.category = category;
+        this.context = context;
     }
 
     @Override
     public MyCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.category_layout,null);
-
-        ViewHolder vh = new ViewHolder((RelativeLayout) v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_layout, parent, false);
+        ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.categoryImage.setVisibility(categoryText[position]);
+    public void onBindViewHolder(MyCategoryAdapter.ViewHolder holder, int position) {
+        holder.categoryTextView.setText(category.get(position).getCategoryName());
+        Picasso.with(context).load(category.get(position).getCategoryIcon());
     }
 
     @Override
     public int getItemCount() {
-        return categoryText.length;
+        return category.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+
+        private TextView categoryTextView;
+        private ImageView categoryImageView;
+
+        public ViewHolder(View view){
+            super(view);
+            categoryTextView = (TextView)view.findViewById(R.id.categoryTextView);
+            categoryImageView = (ImageView) view.findViewById(R.id.categoryImageView);
+        }
     }
 }
