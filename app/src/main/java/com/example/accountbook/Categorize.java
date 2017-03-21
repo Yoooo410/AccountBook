@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -11,10 +13,44 @@ import android.widget.RadioGroup;
 
 public class Categorize extends AppCompatActivity {
 
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.categorize_page);
+        setContentView(R.layout.category_recylerview);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.categoryRecylerView);
+        mRecyclerView.setHasFixedSize(true);
+
+        mLayoutManager = new GridLayoutManager(this,2);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        int[] categoryText =
+                {R.string.categoryFood,
+                R.string.categoryAmusement,
+                R.string.categoryCloth,
+                R.string.categoryUtilities,
+                R.string.categoryHouseRent,
+                R.string.categoryCellPhone,
+                R.string.categoryTransportationFee,
+                R.string.categoryOther,};
+
+
+        int[] categoryImage =
+                {R.drawable.imagefood,
+                R.drawable.imageamusement,
+                R.drawable.imagecloth,
+                R.drawable.imageutilities,
+                R.drawable.imagehouserent,
+                R.drawable.imagecellphone,
+                R.drawable.imagetransportation,
+                R.drawable.imageother,};
+
+        mAdapter = new MyCategoryAdapter(categoryText,categoryImage);
+        mRecyclerView.setAdapter(mAdapter);
 
         final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 //        final int checkedId = radioGroup.getCheckedRadioButtonId();
