@@ -19,15 +19,15 @@ public class Categorize extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private final int categoryText[] = {
-            R.string.categoryFood,
-            R.string.categoryAmusement,
-            R.string.categoryCloth,
-            R.string.categoryUtilities,
-            R.string.categoryHouseRent,
-            R.string.categoryCellPhone,
-            R.string.categoryTransportationFee,
-            R.string.categoryOther
+    private final String categoryText[] = {
+            "Food",
+            "Amusement",
+            "Cloth",
+            "Utilities",
+            "House Rent",
+            "Cell Phone",
+            "Transportation Fee",
+            "Other"
     };
 
     private final int categoryImage[] = {
@@ -52,10 +52,23 @@ public class Categorize extends AppCompatActivity {
         mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        ArrayList<Category> category = prepareData();
+        final ArrayList<Category> category = prepareData();
         MyCategoryAdapter adapter = new MyCategoryAdapter(getApplicationContext(), category);
         mRecyclerView.setAdapter(adapter);
+        mRecyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
 
+                    @Override
+                    public void onItemClick(View view, int position) {
+
+                        Intent intentCategory = new Intent(Categorize.this, AddExpense.class);
+                        intentCategory.putExtra("ClickedCategory", categoryText[position]);
+                        System.out.println(categoryText[position]);
+                        setResult(RESULT_OK, intentCategory);
+                        finish();
+                    }
+                })
+        );
     }
 
     private ArrayList<Category> prepareData() {
@@ -65,11 +78,12 @@ public class Categorize extends AppCompatActivity {
             category2.setCategoryName(categoryText[i]);
             category2.setCategoryIcon(categoryImage[i]);
             category1.add(category2);
-            System.out.println(i);
-
         }
         return category1;
     }
+}
+
+
 
 //        final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 //        final int checkedId = radioGroup.getCheckedRadioButtonId();
@@ -79,8 +93,6 @@ public class Categorize extends AppCompatActivity {
 //            String checkedText = radioButton.getText().toString();
 //            System.out.println(checkedText);
 //        }
-
-
 //        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 //            @Override
 //            public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -113,4 +125,3 @@ public class Categorize extends AppCompatActivity {
 //                finish();
 //            }
 //        });
-}

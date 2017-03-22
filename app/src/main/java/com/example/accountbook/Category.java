@@ -1,14 +1,14 @@
 package com.example.accountbook;
 
 public class Category {
-    private int categoryName;
+    private String categoryName;
     private int categoryIcon;
 
-    public int getCategoryName() {
+    public String getCategoryName() {
         return categoryName;
     }
 
-    public void setCategoryName(int categoryName) {
+    public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
 

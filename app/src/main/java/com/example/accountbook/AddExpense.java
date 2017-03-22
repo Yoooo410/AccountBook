@@ -42,7 +42,7 @@ public class AddExpense extends AppCompatActivity {
             }
         });
         Intent getCategorize = getIntent();
-        String category = getCategorize.getStringExtra("CheckedCategory");
+        String category = getCategorize.getStringExtra("ClickedCategory");
         System.out.println(category);
         textViewCategory.setText(category);
 
@@ -111,7 +111,7 @@ public class AddExpense extends AppCompatActivity {
 
             case 1:
                 if(resultCode == RESULT_OK){
-                    String checkedCategory = data.getStringExtra("checkedCategory");
+                    String checkedCategory = data.getStringExtra("ClickedCategory");
                     final TextView textViewCategory = (TextView) findViewById(R.id.textViewCategory);
                     textViewCategory.setText(checkedCategory);
                 }
