@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +34,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
+        tabHost.setup();
 
-        /** set intent from MainActivity to AddExpense **/
+        TabHost.TabSpec tabCalender = tabHost.newTabSpec("Calender");
+        TabHost.TabSpec tabMonthly = tabHost.newTabSpec("Monthly");
+
+        tabCalender.setIndicator("Calender");
+        tabCalender.setContent(new Intent(this,ExpenseOfMonth.class));
+
+
+        tabHost.addTab(tabCalender);
+        tabHost.addTab(tabMonthly);
+        tabHost.setCurrentTab(0);
+
+
+        /** set intent from MainActivity to AddExpense in fab button**/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -301,7 +316,10 @@ public class MainActivity extends AppCompatActivity {
         DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
         final SQLiteDatabase db = dbHelper.getReadableDatabase();
         final Cursor cursor1 = db.rawQuery(
-                "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE " + DatabaseHelper.COLUMN_YEAR  + " = " + year + " AND " + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+                "SELECT TOTAL(" + DatabaseHelper.COLUMN_PRICE + ") FROM AccountBook WHERE "
+                        + DatabaseHelper.COLUMN_YEAR  + " = " + year + " AND "
+                        + DatabaseHelper.COLUMN_MONTH  + " = " + (month + 1), null);
+
         double total = 0;
         if (cursor1.moveToNext()){
             total = cursor1.getInt(0);

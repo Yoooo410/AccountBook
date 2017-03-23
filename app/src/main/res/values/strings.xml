@@ -10,5 +10,7 @@
     <string name="categoryCellPhone">Cell Phone</string>
     <string name="categoryTransportationFee">Transportation Fee</string>
     <string name="categoryOther">Other</string>
+    <string name="tab1">Calender</string>
+    <string name="tab2">Monthly</string>
 
 </resources>
