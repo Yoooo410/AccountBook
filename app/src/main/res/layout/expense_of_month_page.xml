@@ -9,96 +9,128 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="50dp">
 
         <TextView
+            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:id="@+id/textView5"
-            android:text="Expense of moth"
-            android:textSize="25sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:gravity="bottom" />
+            android:gravity="bottom"
+            android:text="Expense of moth"
+            android:textSize="25sp" />
     </RelativeLayout>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/background_light"
-        android:elevation="15dp"
         android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp">
+        android:layout_marginTop="5sp"
+        android:background="@android:color/background_light"
+        android:elevation="15dp">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/totalExpenseOfFood"
+            android:layout_alignBottom="@+id/totalExpenseOfFood"
+            android:layout_toLeftOf="@+id/totalExpenseOfFood" />
+
+        <TextView
             android:id="@+id/totalExpenseOfFood"
-            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/textView6"
+            android:layout_alignBottom="@+id/textView6"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
         <TextView
-            android:text="@string/categoryFood"
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView6"
-            android:textSize="20sp"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/imageFood"
-            android:layout_toEndOf="@+id/imageFood"
             android:layout_marginLeft="11dp"
-            android:layout_marginStart="11dp" />
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/imageFood"
+            android:layout_toRightOf="@+id/imageFood"
+            android:text="@string/categoryFood"
+            android:textSize="20sp" />
 
         <ImageView
+            android:id="@+id/imageFood"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/imagefood"
-            android:id="@+id/imageFood"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            app:srcCompat="@drawable/imagefood" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/background_light"
-        android:elevation="10dp"
         android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp">
+        android:layout_marginTop="5sp"
+        android:background="@android:color/background_light"
+        android:elevation="10dp">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/totalExpenseOfAmusement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/totalExpenseOfAmusement"
-            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp" />
 
         <ImageView
+            android:id="@+id/imageAmusement"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/imageamusement"
-            android:id="@+id/imageAmusement"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            app:srcCompat="@drawable/imageamusement" />
 
         <TextView
-            android:text="@string/categoryAmusement"
+            android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView7"
-            android:textSize="20sp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
-            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/imageAmusement"
             android:layout_toRightOf="@+id/imageAmusement"
-            android:layout_toEndOf="@+id/imageAmusement" />
+            android:text="@string/categoryAmusement"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/totalExpenseOfAmusement"
+            android:layout_alignBottom="@+id/totalExpenseOfAmusement"
+            android:layout_toLeftOf="@+id/totalExpenseOfAmusement"
+            android:layout_toStartOf="@+id/totalExpenseOfAmusement" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -110,13 +142,16 @@
         android:layout_marginTop="5sp">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/totalExpenseOfCloth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/totalExpenseOfCloth"
-            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp" />
 
         <TextView
             android:text="@string/categoryCloth"
@@ -137,123 +172,180 @@
             android:id="@+id/imageCloth"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/totalExpenseOfCloth"
+            android:layout_toLeftOf="@+id/totalExpenseOfCloth"
+            android:layout_toStartOf="@+id/totalExpenseOfCloth"
+            android:text="$"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/background_light"
         android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp">
+        android:layout_marginTop="5sp"
+        android:background="@android:color/background_light">
 
         <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/totalExpenseOfUtilities"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:text="@string/categoryUtilities"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:text="@string/categoryUtilities"
             android:textSize="20sp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/imageUtilities"
             android:layout_toEndOf="@+id/imageUtilities" />
 
         <ImageView
+            android:id="@+id/imageUtilities"
             android:layout_width="30dp"
             android:layout_height="30dp"
             app:srcCompat="@drawable/imageutilities"
-            android:id="@+id/imageUtilities"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/totalExpenseOfUtilities"
+            android:layout_toStartOf="@+id/totalExpenseOfUtilities"
+            android:text="$"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/background_light"
-        android:elevation="15dp"
         android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp">
+        android:layout_marginTop="5sp"
+        android:background="@android:color/background_light"
+        android:elevation="15dp">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/totalExpenseOfHOuseRent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/totalExpenseOfHOuseRent"
-            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp" />
 
         <ImageView
+            android:id="@+id/imageHouseRent"
             android:layout_width="30dp"
             android:layout_height="30dp"
             app:srcCompat="@drawable/imagehouserent"
-            android:id="@+id/imageHouseRent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:text="@string/categoryHouseRent"
+            android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView11"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:text="@string/categoryHouseRent"
             android:textSize="20sp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/imageHouseRent"
             android:layout_toEndOf="@+id/imageHouseRent" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/totalExpenseOfHOuseRent"
+            android:layout_toStartOf="@+id/totalExpenseOfHOuseRent"
+            android:text="$"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/background_light"
-        android:elevation="5dp"
         android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp">
+        android:layout_marginTop="5sp"
+        android:background="@android:color/background_light"
+        android:elevation="5dp">
 
         <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/totalExpenseOfCellPhone"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:text="@string/categoryCellPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView12"
+            android:layout_alignBottom="@+id/textView12"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/textView12"
-            android:textSize="20sp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/imageCellPhone"
             android:layout_toRightOf="@+id/imageCellPhone"
-            android:layout_toEndOf="@+id/imageCellPhone" />
+            android:text="@string/categoryCellPhone"
+            android:textSize="20sp" />
 
         <ImageView
+            android:id="@+id/imageCellPhone"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/imagecellphone"
-            android:id="@+id/imageCellPhone"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            app:srcCompat="@drawable/imagecellphone" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/totalExpenseOfCellPhone"
+            android:layout_toLeftOf="@+id/totalExpenseOfCellPhone"
+            android:text="$"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -265,10 +357,13 @@
         android:layout_marginTop="5sp">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/totalExpenseOfTransportationFee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/totalExpenseOfTransportationFee"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp"
             android:layout_alignBaseline="@+id/textView13"
             android:layout_alignBottom="@+id/textView13"
             android:layout_alignParentRight="true"
@@ -280,8 +375,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView13"
             android:textSize="20sp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/imageTransportationFee"
             android:layout_toEndOf="@+id/imageTransportationFee" />
@@ -293,46 +388,73 @@
             android:id="@+id/imageTransportationFee"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView13"
+            android:layout_toLeftOf="@+id/totalExpenseOfTransportationFee"
+            android:layout_toStartOf="@+id/totalExpenseOfTransportationFee"
+            android:text="$"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/background_light"
-        android:elevation="5dp"
         android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp">
+        android:layout_marginTop="5sp"
+        android:background="@android:color/background_light"
+        android:elevation="5dp">
 
         <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/totalExpenseOfOther"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:text="@string/categoryOther"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView14"
-            android:textSize="20sp"
-            android:layout_marginLeft="46dp"
-            android:layout_marginStart="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="TextView"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:text="@string/categoryOther"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageOther"
+            android:layout_toEndOf="@+id/imageOther" />
 
         <ImageView
+            android:id="@+id/imageOther"
             android:layout_width="30dp"
             android:layout_height="30dp"
             app:srcCompat="@drawable/imageother"
-            android:id="@+id/imageOther"
-            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_alignTop="@+id/textView14"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/totalExpenseOfOther"
+            android:layout_toStartOf="@+id/totalExpenseOfOther"
+            android:text="$"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -344,25 +466,38 @@
         android:layout_marginTop="5sp">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/totalExpense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/totalExpense"
+            android:text="TextView"
+            android:textSize="20sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
         <TextView
-            android:text="Total"
+            android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView27"
-            android:layout_marginRight="48dp"
-            android:layout_marginEnd="48dp"
-            android:layout_alignBaseline="@+id/totalExpense"
-            android:layout_alignBottom="@+id/totalExpense"
+            android:layout_marginEnd="41dp"
+            android:layout_marginRight="41dp"
+            android:text="Total"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/textView24"
+            android:layout_alignBottom="@+id/textView24"
+            android:layout_toLeftOf="@+id/textView24"
+            android:layout_toStartOf="@+id/textView24" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/totalExpense"
             android:layout_toLeftOf="@+id/totalExpense"
             android:layout_toStartOf="@+id/totalExpense"
-            android:textSize="18sp" />
+            android:text="$"
+            android:textSize="20sp" />
     </RelativeLayout>
 </LinearLayout>

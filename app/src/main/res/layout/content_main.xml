@@ -10,54 +10,62 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:orientation="horizontal"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="110dp"
         android:orientation="horizontal">
 
-        <TabHost
-            android:id="@+id/tabHost"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TabWidget
-                    android:id="@android:id/tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <FrameLayout
-                    android:id="@android:id/tabcontent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:id="@+id/tab1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/tab2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                    </LinearLayout>
-
-                </FrameLayout>
-            </LinearLayout>
-        </TabHost>
     </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TabHost-->
+            <!--android:id="@+id/tabHost"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TabWidget-->
+                    <!--android:id="@android:id/tabs"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content" />-->
+
+                <!--<FrameLayout-->
+                    <!--android:id="@android:id/tabcontent"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent">-->
+
+                    <!--&lt;!&ndash;<android.support.v4.view.ViewPager&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/viewpager"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="fill_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="50dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_weight="1"/>&ndash;&gt;-->
+
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tab1"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:orientation="vertical">-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tab2"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:orientation="vertical">-->
+
+                    <!--</LinearLayout>-->
+
+                <!--</FrameLayout>-->
+            <!--</LinearLayout>-->
+        <!--</TabHost>-->
+    <!--</LinearLayout>-->
 
     <LinearLayout
         android:orientation="horizontal"

@@ -7,45 +7,72 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="54dp">
+        android:layout_height="80dp">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="2017"
-                android:ems="10"
-                android:id="@+id/editTextYear"
-                android:layout_weight="1"
-                android:textAlignment="textEnd" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="11"
-                android:ems="10"
-                android:id="@+id/editTextMonth"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="number" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="22"
-                android:ems="10"
-                android:id="@+id/editTextDay"
-                android:layout_weight="1"
-                android:inputType="number" />
+            android:orientation="horizontal">
 
         </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextYear"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/linearLayout"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:ems="10"
+            android:hint="2017"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextMonth"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editTextYear"
+            android:layout_alignBottom="@+id/editTextYear"
+            android:layout_toEndOf="@+id/editTextYear"
+            android:layout_toRightOf="@+id/editTextYear"
+            android:ems="10"
+            android:hint="11"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextDay"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editTextMonth"
+            android:layout_alignBottom="@+id/editTextMonth"
+            android:layout_toEndOf="@+id/editTextMonth"
+            android:layout_toRightOf="@+id/editTextMonth"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="22"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="49dp"
+            android:layout_marginStart="49dp"
+            android:layout_weight="1"
+            android:text="DATE"
+            android:textSize="25sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 
@@ -75,16 +102,18 @@
             android:layout_alignParentEnd="true" />
 
         <TextView
+            android:id="@+id/textViewCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="food"
-            android:textSize="18sp"
             android:ems="10"
-            android:id="@+id/textViewCategory"
+            android:hint="food"
             android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_marginRight="26dp"
+            android:layout_marginEnd="26dp"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/category"
-            android:layout_toEndOf="@+id/category" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 
@@ -93,30 +122,31 @@
         android:layout_height="80dp">
 
         <TextView
-            android:text="DETAIL"
+            android:id="@+id/detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/detail"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="45dp"
             android:layout_marginStart="45dp"
+            android:text="DETAIL"
             android:textSize="25sp" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
             android:id="@+id/editTextDetail"
-            android:textAlignment="center"
-            android:hint="egg"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="13dp"
-            android:layout_marginEnd="13dp" />
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:ems="10"
+            android:hint="egg"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -145,15 +175,16 @@
             android:layout_centerHorizontal="true" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="100.00"
-            android:ems="10"
             android:id="@+id/editTextPrice"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:ems="10"
+            android:hint="100.00"
+            android:inputType="numberDecimal"
             android:textAlignment="center"
-            android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp"
+            android:textSize="20sp"
             android:layout_alignBaseline="@+id/textView10"
             android:layout_alignBottom="@+id/textView10"
             android:layout_alignParentRight="true"
@@ -180,36 +211,36 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginStart="65dp"
+            android:id="@+id/rgPayment"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/payment"
-            android:layout_toEndOf="@+id/payment"
-            android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp"
-            android:id="@+id/rgPayment">
+            android:layout_toEndOf="@+id/payment">
 
             <RadioButton
-                android:text="Cash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/rbCash"
-                android:layout_weight="1"
-                android:textSize="17sp" />
-
-            <RadioButton
-                android:text="Credit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cash"
+                android:textSize="20sp" />
+
+            <RadioButton
                 android:id="@+id/rbCredit"
-                android:layout_weight="1"
-                android:textSize="17sp" />
-
-            <RadioButton
-                android:text="Debit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rbDebit"
                 android:layout_weight="1"
-                android:textSize="17sp" />
+                android:text="Credit"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/rbDebit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Debit"
+                android:textSize="20sp" />
         </RadioGroup>
 
     </RelativeLayout>

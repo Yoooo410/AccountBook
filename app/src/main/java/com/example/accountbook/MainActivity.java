@@ -1,5 +1,6 @@
 package com.example.accountbook;
 
+import android.app.LocalActivityManager;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +9,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -33,20 +37,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setView();
 
-        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
-        tabHost.setup();
-
-        TabHost.TabSpec tabCalender = tabHost.newTabSpec("Calender");
-        TabHost.TabSpec tabMonthly = tabHost.newTabSpec("Monthly");
-
-        tabCalender.setIndicator("Calender");
-        tabCalender.setContent(new Intent(this,ExpenseOfMonth.class));
-
-
-        tabHost.addTab(tabCalender);
-        tabHost.addTab(tabMonthly);
-        tabHost.setCurrentTab(0);
+//        TabsViewPagerFragmentActivity tabActivity = new TabsViewPagerFragmentActivity();
+//        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+//        LocalActivityManager mLocalActivityManager = new LocalActivityManager(this,false);
+//
+//        tabHost.setup(mLocalActivityManager);
+//
+//        TabHost.TabSpec tabCalender = tabHost.newTabSpec("Calender");
+//        TabHost.TabSpec tabMonthly = tabHost.newTabSpec("Monthly");
+//        tabCalender.setIndicator("Calender");
+//        tabCalender.setContent(new Intent(this,ExpenseOfMonth.class));
+//        tabCalender.setContent(R.id.);
+//
+//
+//
+//        tabHost.addTab(tabCalender);
+//        tabHost.addTab(tabMonthly);
+//        tabHost.setCurrentTab(0);
 
 
         /** set intent from MainActivity to AddExpense in fab button**/
@@ -306,6 +315,18 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private void setView() {
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+//        setSupportActionBar(toolbar);
+        FragmentManager manager = getSupportFragmentManager();
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(manager);
+        viewPager.setAdapter(adapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+
     }
 
     @Override

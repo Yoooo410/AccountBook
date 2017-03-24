@@ -5,44 +5,71 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="95dp">
+        android:layout_height="75dp">
 
         <TextView
+            android:id="@+id/dateOfExpense"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/dateOfExpense"
-            android:layout_centerVertical="true"
+            android:gravity="bottom"
             android:textAlignment="center"
-            android:textSize="36sp" />
+            android:textSize="35sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <TextView
+            android:id="@+id/totalExpenseOfDay"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="23sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Total"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_toLeftOf="@+id/totalExpenseOfDay"
+            android:layout_toStartOf="@+id/totalExpenseOfDay"
+            android:layout_weight="1"
+            android:text="$"
+            android:textAlignment="textEnd"
+            android:textSize="23sp" />
     </RelativeLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="35dp">
+        android:layout_height="5dp"
+        android:orientation="horizontal">
 
-        <TextView
-            android:text="Total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView4"
-            android:layout_weight="1"
-            android:textAlignment="textEnd"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/totalExpenseOfDay"
-            android:layout_weight="1"
-            android:textAlignment="center"
-            android:textSize="20sp" />
     </LinearLayout>
 
     <ListView
+        android:id="@+id/myExpenseListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/myExpenseListView" />
+        android:layout_height="390dp" />
 
 
 </LinearLayout>
